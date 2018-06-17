@@ -18,7 +18,7 @@ public class Step {
     @Expose
     private StartLocation startLocation;
 
-    public Object getDistance() {
+    public Distance getDistance() {
         return distance;
     }
 
@@ -26,7 +26,7 @@ public class Step {
         this.distance = distance;
     }
 
-    public Object getDuration() {
+    public Duration getDuration() {
         return duration;
     }
 
@@ -34,7 +34,7 @@ public class Step {
         this.duration = duration;
     }
 
-    public Object getEndLocation() {
+    public EndLocation getEndLocation() {
         return endLocation;
     }
 
@@ -42,7 +42,7 @@ public class Step {
         this.endLocation = endLocation;
     }
 
-    public Object getStartLocation() {
+    public StartLocation getStartLocation() {
         return startLocation;
     }
 
