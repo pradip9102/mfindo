@@ -1,20 +1,19 @@
 buildscript {
-	ext {
-		kotlinVersion = '1.2.31'
-		springBootVersion = '2.0.3.RELEASE'
-		okHttpVersion = '3.10.0'
-		retrofitVersion = '2.4.0'
+    ext {
+        kotlinVersion = '1.2.31'
+        springBootVersion = '2.0.3.RELEASE'
+        okHttpVersion = '3.10.0'
+        retrofitVersion = '2.4.0'
         rxJavaVersion = '2.1.6'
-        daggerVersion = '2.13'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
-		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
-	}
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+    }
 }
 
 apply plugin: 'kotlin'
@@ -29,41 +28,39 @@ group = 'com.vizurd.travel'
 version = '0.0.1'
 sourceCompatibility = 1.8
 compileKotlin {
-	kotlinOptions {
-		freeCompilerArgs = ["-Xjsr305=strict"]
-		jvmTarget = "1.8"
-	}
+    kotlinOptions {
+        freeCompilerArgs = ["-Xjsr305=strict"]
+        jvmTarget = "1.8"
+    }
 }
 compileTestKotlin {
-	kotlinOptions {
-		freeCompilerArgs = ["-Xjsr305=strict"]
-		jvmTarget = "1.8"
-	}
+    kotlinOptions {
+        freeCompilerArgs = ["-Xjsr305=strict"]
+        jvmTarget = "1.8"
+    }
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 
 dependencies {
 //	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('org.springframework.boot:spring-boot-starter-data-rest')
-	compile('org.springframework.boot:spring-boot-starter-integration')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile("com.squareup.okhttp3:okhttp:${okHttpVersion}")
+    compile('org.springframework.boot:spring-boot-starter-data-rest')
+    compile('org.springframework.boot:spring-boot-starter-integration')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile("com.squareup.okhttp3:okhttp:${okHttpVersion}")
     compile("com.squareup.okhttp3:logging-interceptor:${okHttpVersion}")
     compile("com.squareup.retrofit2:retrofit:${retrofitVersion}")
     compile("com.squareup.retrofit2:converter-gson:${retrofitVersion}")
     compile("com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}")
-    compile("com.google.dagger:dagger:${daggerVersion}")
-	kapt("com.google.dagger:dagger-compiler:${daggerVersion}")
     compile("io.reactivex.rxjava2:rxjava:${rxJavaVersion}")
-	compile('com.fasterxml.jackson.module:jackson-module-kotlin')
-	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	compile("org.jetbrains.kotlin:kotlin-reflect")
+    compile('com.fasterxml.jackson.module:jackson-module-kotlin')
+    compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    compile("org.jetbrains.kotlin:kotlin-reflect")
     compile "io.github.microutils:kotlin-logging:1.4.6"
-	runtime('org.springframework.boot:spring-boot-devtools')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
+    runtime('org.springframework.boot:spring-boot-devtools')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
 }
