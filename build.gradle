@@ -5,6 +5,7 @@ buildscript {
         okHttpVersion = '3.10.0'
         retrofitVersion = '2.4.0'
         rxJavaVersion = '2.1.6'
+        googleMapVersion = '0.2.7'
     }
     repositories {
         mavenCentral()
@@ -56,6 +57,7 @@ dependencies {
     compile("com.squareup.retrofit2:converter-gson:${retrofitVersion}")
     compile("com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}")
     compile("io.reactivex.rxjava2:rxjava:${rxJavaVersion}")
+    compile("com.google.maps:google-maps-services:${googleMapVersion}")
     compile('com.fasterxml.jackson.module:jackson-module-kotlin')
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     compile("org.jetbrains.kotlin:kotlin-reflect")

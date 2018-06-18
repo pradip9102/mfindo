@@ -3,6 +3,7 @@ package com.vizurd.travel.mfindo
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.google.maps.GeoApiContext
 import com.vizurd.travel.mfindo.networkRepo.NetworkRepository
 import com.vizurd.travel.mfindo.utils.Constants
 import okhttp3.OkHttpClient
@@ -12,7 +13,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class RetrofitProvider(private val mBaseUrl: String) {
+class RetrofitProvider(private val mBaseUrl: String = Constants.BASE_URL) {
 
     private val networkRepo: NetworkRepository? = null
 
@@ -39,6 +40,12 @@ class RetrofitProvider(private val mBaseUrl: String) {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .baseUrl(mBaseUrl)
                 .client(provideOkHttpClient())
+                .build()
+    }
+
+    fun getGeoApiContext(): GeoApiContext {
+        return GeoApiContext.Builder()
+                .apiKey(Constants.GOOGLE_MAP_API_KEY)
                 .build()
     }
 

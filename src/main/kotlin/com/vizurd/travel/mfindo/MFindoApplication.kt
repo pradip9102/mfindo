@@ -16,5 +16,6 @@ fun main(args: Array<String>) {
     runApplication<MFindoApplication>(*args)
     MFindoApplication.logger.debug { "m-Findo is up and running." }
     val stepConvertor = StepConvertor()
-    stepConvertor.fetchFromApi()
+//    stepConvertor.fetchFromApi()
+    stepConvertor.fetchFromGeoApi()
 }
