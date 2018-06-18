@@ -1,20 +1,19 @@
 buildscript {
     ext {
-        kotlin_version = '1.2.50'
-        spring_boot_version = '2.0.3.RELEASE'
-        ok_http_version = '3.10.0'
-        retrofit_version = '2.4.0'
-        rx_java_version = '2.1.6'
-        google_map_version = '0.2.7'
-        kotlin_logging_version = '1.4.6'
+        kotlinVersion = '1.2.31'
+        springBootVersion = '2.0.3.RELEASE'
+        okHttpVersion = '3.10.0'
+        retrofitVersion = '2.4.0'
+        rxJavaVersion = '2.1.6'
+        googleMapVersion = '0.2.7'
     }
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${spring_boot_version}")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}")
-        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlin_version}")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
     }
 }
 
@@ -52,17 +51,17 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-rest')
     compile('org.springframework.boot:spring-boot-starter-integration')
     compile('org.springframework.boot:spring-boot-starter-web')
-    compile("com.squareup.okhttp3:okhttp:${ok_http_version}")
-    compile("com.squareup.okhttp3:logging-interceptor:${ok_http_version}")
-    compile("com.squareup.retrofit2:retrofit:${retrofit_version}")
-    compile("com.squareup.retrofit2:converter-gson:${retrofit_version}")
-    compile("com.squareup.retrofit2:adapter-rxjava2:${retrofit_version}")
-    compile("io.reactivex.rxjava2:rxjava:${rx_java_version}")
+    compile("com.squareup.okhttp3:okhttp:${okHttpVersion}")
+    compile("com.squareup.okhttp3:logging-interceptor:${okHttpVersion}")
+    compile("com.squareup.retrofit2:retrofit:${retrofitVersion}")
+    compile("com.squareup.retrofit2:converter-gson:${retrofitVersion}")
+    compile("com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}")
+    compile("io.reactivex.rxjava2:rxjava:${rxJavaVersion}")
+    compile("com.google.maps:google-maps-services:${googleMapVersion}")
     compile('com.fasterxml.jackson.module:jackson-module-kotlin')
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     compile("org.jetbrains.kotlin:kotlin-reflect")
-    compile("com.google.maps:google-maps-services:${google_map_version}")
-    compile "io.github.microutils:kotlin-logging:${kotlin_logging_version}"
+    compile "io.github.microutils:kotlin-logging:1.4.6"
     runtime('org.springframework.boot:spring-boot-devtools')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
