@@ -1,5 +1,7 @@
 package com.vizurd.travel.mfindo
 
+import com.vizurd.travel.mfindo.controllers.MapRestController
+import com.vizurd.travel.mfindo.services.GoogleMapsService
 import mu.KotlinLogging
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -23,3 +25,10 @@ fun main(args: Array<String>) {
     runApplication<MFindoApplication>(*args)
     MFindoApplication.logger.debug { "m-Findo is up and running." }
 }
+
+/*val googleMapService = GoogleMapsService()
+    val temp = MapRestController(googleMapService)
+    val f = temp.getResult("bandra","goregaon","bandra","goregaon")
+
+}
+*/
